@@ -1,0 +1,1028 @@
+```html
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DEYMA SALÓN & SPA</title>
+
+<style>
+:root {
+    --guinda: #701b38;
+    --guinda2: #922b50;
+    --rosa: #f5dce5;
+    --dorado: #d5ad68;
+    --fondo: #fff7fa;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f1e5ea;
+    color: #44202e;
+}
+
+.app {
+    max-width: 480px;
+    min-height: 100vh;
+    margin: auto;
+    background: var(--fondo);
+    padding-bottom: 85px;
+    box-shadow: 0 0 20px #0002;
+}
+
+header {
+    background: linear-gradient(135deg,#4b1027,#922b50);
+    color: white;
+    text-align: center;
+    padding: 22px 15px;
+    border-radius: 0 0 28px 28px;
+}
+
+.logo {
+    width: 115px;
+    height: 115px;
+    margin: auto;
+    border: 3px solid var(--dorado);
+    border-radius: 50%;
+    background: #fff0f5;
+    overflow: hidden;
+}
+
+.logo svg {
+    width: 100%;
+    height: 100%;
+}
+
+header h1 {
+    font-family: Georgia,serif;
+    color: #f7d9b1;
+    font-size: 30px;
+    margin-top: 10px;
+}
+
+header h2 {
+    font-size: 17px;
+    margin-top: 3px;
+}
+
+header p {
+    font-size: 10px;
+    letter-spacing: 3px;
+    margin-top: 7px;
+}
+
+.intro {
+    text-align: center;
+    padding: 22px 16px;
+}
+
+.intro h2 {
+    font-family: Georgia,serif;
+    font-size: 26px;
+    color: var(--guinda);
+    margin-bottom: 10px;
+}
+
+.intro p {
+    font-size: 13px;
+    line-height: 1.7;
+}
+
+.hero {
+    height: 210px;
+    margin: 0 15px;
+    border-radius: 20px;
+    overflow: hidden;
+    position: relative;
+}
+
+.hero img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.hero div {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    padding: 30px 15px;
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    background: linear-gradient(transparent,#3e1027);
+}
+
+section {
+    padding: 20px 15px;
+}
+
+.titulo {
+    font-family: Georgia,serif;
+    font-size: 23px;
+    color: var(--guinda);
+    margin-bottom: 15px;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 12px;
+}
+
+.card {
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px #64152f14;
+    border: 1px solid #f0dce4;
+}
+
+.card img {
+    width: 100%;
+    height: 125px;
+    object-fit: cover;
+}
+
+.card h3 {
+    color: var(--guinda);
+    font-size: 13px;
+    padding: 9px;
+}
+
+.card p {
+    color: #775d68;
+    font-size: 11px;
+    padding: 0 9px 12px;
+    line-height: 1.5;
+}
+
+.pagina {
+    display: none;
+}
+
+.pagina.activa {
+    display: block;
+}
+
+.boton {
+    background: linear-gradient(135deg,var(--guinda),var(--guinda2));
+    color: white;
+    border: none;
+    border-radius: 10px;
+    padding: 13px;
+    width: 100%;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.boton:active {
+    transform: scale(.98);
+}
+
+.panel {
+    background: white;
+    padding: 17px;
+    border-radius: 16px;
+    box-shadow: 0 4px 15px #0000000c;
+}
+
+label {
+    display: block;
+    font-size: 12px;
+    color: var(--guinda);
+    font-weight: bold;
+    margin: 12px 0 6px;
+}
+
+input,select,textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #e5cbd5;
+    border-radius: 9px;
+    background: #fffafb;
+    font-size: 13px;
+    outline: none;
+}
+
+input:focus,select:focus,textarea:focus {
+    border-color: var(--guinda);
+}
+
+textarea {
+    min-height: 70px;
+    resize: vertical;
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+}
+
+.full {
+    grid-column: 1/-1;
+}
+
+.estadisticas {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 8px;
+    margin-bottom: 15px;
+}
+
+.estadistica {
+    background: var(--rosa);
+    border-radius: 12px;
+    text-align: center;
+    padding: 13px 5px;
+}
+
+.estadistica strong {
+    display: block;
+    font-size: 19px;
+    color: var(--guinda);
+}
+
+.estadistica span {
+    font-size: 10px;
+}
+
+.cliente {
+    background: white;
+    border: 1px solid #ead6df;
+    border-radius: 13px;
+    padding: 13px;
+    margin-bottom: 10px;
+    font-size: 12px;
+    line-height: 1.8;
+    overflow-wrap: anywhere;
+}
+
+.cliente strong {
+    color: var(--guinda);
+    font-size: 14px;
+}
+
+.acciones {
+    display: flex;
+    gap: 8px;
+    margin-top: 8px;
+}
+
+.acciones button {
+    padding: 8px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.editar {
+    background: var(--rosa);
+    color: var(--guinda);
+}
+
+.eliminar {
+    background: #ffe1e1;
+    color: #a32222;
+}
+
+nav {
+    position: fixed;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: min(480px,100%);
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    background: white;
+    border-top: 2px solid var(--rosa);
+    padding: 10px 3px;
+    z-index: 10;
+}
+
+nav button {
+    border: none;
+    background: none;
+    color: #987c88;
+    font-size: 10px;
+    cursor: pointer;
+}
+
+nav button span {
+    display: block;
+    font-size: 22px;
+    margin-bottom: 4px;
+}
+
+nav button.activo {
+    color: var(--guinda);
+    font-weight: bold;
+}
+
+footer {
+    text-align: center;
+    padding: 25px 10px;
+    font-size: 11px;
+    color: #977582;
+}
+
+@media(max-width:350px) {
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
+    .full {
+        grid-column: auto;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="app">
+
+<header>
+
+    <div class="logo">
+        <!-- LOGOTIPO CON SILUETA DE DAMA -->
+        <svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="60" cy="60" r="57" fill="#fff0f5"/>
+            <path d="M28 108 Q30 80 48 75 L45 62
+            Q30 51 35 28 Q40 8 66 14
+            Q90 20 83 48 Q81 61 72 67
+            L74 77 Q98 83 101 108 Z"
+            fill="#65162f"/>
+            <path d="M36 44 Q18 13 51 12
+            Q80 -2 88 27 Q94 48 75 56
+            Q83 34 66 29 Q50 43 36 44"
+            fill="#3d0b20"/>
+            <path d="M43 21 L49 9 L56 20 L63 5
+            L70 20 L78 10 L81 28 L43 28 Z"
+            fill="#d5ad68"/>
+            <circle cx="63" cy="16" r="3" fill="white"/>
+            <path d="M66 49 Q76 54 82 47"
+            fill="none" stroke="white" stroke-width="2"/>
+            <path d="M53 65 Q60 71 70 65"
+            fill="none" stroke="#e8a4b9" stroke-width="2"/>
+            <circle cx="77" cy="58" r="4" fill="#d5ad68"/>
+            <path d="M27 108 Q55 89 101 108" fill="#d5ad68"/>
+        </svg>
+    </div>
+
+    <h1>DEYMA</h1>
+    <h2>SALÓN & SPA</h2>
+    <p>BELLEZA · ESTILO · BIENESTAR</p>
+
+</header>
+
+<!-- PAGINA DE INICIO -->
+
+<div id="inicio" class="pagina activa">
+
+    <div class="intro">
+        <h2>¡Bienvenida a Deyma!</h2>
+        <p>
+        Somos un salón de belleza dedicado a resaltar
+        tu belleza y cuidar de tu imagen.
+        Ofrecemos atención personalizada,
+        calidad y elegancia para cada ocasión.
+        </p>
+    </div>
+
+    <div class="hero">
+        <img src="https://images.unsplash.com/photo-1560066984-138dadb4c035?w=900"
+        alt="Salón de belleza">
+        <div>Tu belleza merece lo mejor ✨</div>
+    </div>
+
+    <section>
+        <h2 class="titulo">Nuestros trabajos</h2>
+
+        <div class="grid">
+
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=500" alt="Peinados">
+                <h3>Peinados escolares</h3>
+                <p>Estilos especiales para promociones.</p>
+            </div>
+
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1595476108010-b4d1f102b1b1?w=500" alt="Quinceañera">
+                <h3>Quinceañeras</h3>
+                <p>Elegancia para tus quince años.</p>
+            </div>
+
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1519741497674-611481863552?w=500" alt="Novias">
+                <h3>Peinados de novias</h3>
+                <p>Un look inolvidable para tu boda.</p>
+            </div>
+
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1604654894610-df63bc536371?w=500" alt="Manicura">
+                <h3>Manicura</h3>
+                <p>Diseños y belleza para tus manos.</p>
+            </div>
+
+        </div>
+    </section>
+
+    <section>
+        <div class="panel">
+            <h2 class="titulo">Agenda tu atención</h2>
+            <p style="font-size:13px;margin-bottom:12px">
+            Registra tus servicios y lleva el control de tus clientes.
+            </p>
+            <button class="boton" onclick="mostrar('registro')">
+                REGISTRAR CLIENTE
+            </button>
+        </div>
+    </section>
+
+</div>
+
+<!-- CATALOGO DE SERVICIOS -->
+
+<div id="servicios" class="pagina">
+<section>
+<h2 class="titulo">Nuestros servicios</h2>
+
+<div class="grid">
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=500" alt="Peinados escolares">
+<h3>Peinados escolares</h3>
+<p>Peinados para promociones.</p>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1595476108010-b4d1f102b1b1?w=500" alt="Quinceañeras">
+<h3>Quinceañeras</h3>
+<p>Peinados elegantes.</p>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1519741497674-611481863552?w=500" alt="Novias">
+<h3>Peinados de novias</h3>
+<p>Estilos románticos.</p>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1560869713-7d0a29430803?w=500" alt="Laceados">
+<h3>Laceados</h3>
+<p>Cabello liso y brillante.</p>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1521590832167-7bcbfaa6381f?w=500" alt="Tintes">
+<h3>Tintes</h3>
+<p>Coloración de cabello.</p>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1604654894610-df63bc536371?w=500" alt="Manicura">
+<h3>Manicura</h3>
+<p>Cuidado de las uñas.</p>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1610992015732-2449b76344bc?w=500" alt="Uñas acrílicas">
+<h3>Uñas acrílicas</h3>
+<p>Diseños personalizados.</p>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1595959183082-7b570b7e08e2?w=500" alt="Rayitos">
+<h3>Rayitos</h3>
+<p>Iluminación capilar.</p>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1560066984-138dadb4c035?w=500" alt="Corte de damas">
+<h3>Corte para damas</h3>
+<p>Estilos modernos.</p>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1503944583220-79d8926ad5e2?w=500" alt="Corte de caballeros">
+<h3>Corte para caballeros</h3>
+<p>Cortes actuales.</p>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1519699047748-de8e457a634e?w=500" alt="Corte de niños">
+<h3>Corte para niños</h3>
+<p>Estilos infantiles.</p>
+</div>
+
+</div>
+</section>
+</div>
+
+<!-- FORMULARIO DE ATENCION -->
+
+<div id="registro" class="pagina">
+<section>
+
+<h2 class="titulo">Registro de atención</h2>
+
+<div class="panel">
+
+<form id="formulario">
+
+<input type="hidden" id="idEditar">
+
+<div class="form-grid">
+
+<div class="full">
+<label>Nombres y apellidos *</label>
+<input type="text" id="nombre" required placeholder="Nombre completo">
+</div>
+
+<div>
+<label>Teléfono</label>
+<input type="tel" id="telefono" placeholder="Celular">
+</div>
+
+<div>
+<label>Fecha *</label>
+<input type="date" id="fecha" required>
+</div>
+
+<div class="full">
+<label>Servicio *</label>
+<select id="servicio" required>
+<option value="">Seleccionar servicio</option>
+<option>Peinados escolares</option>
+<option>Peinados de quinceañera</option>
+<option>Peinados de novias</option>
+<option>Laceados</option>
+<option>Tintes</option>
+<option>Manicura</option>
+<option>Uñas acrílicas</option>
+<option>Rayitos</option>
+<option>Corte para damas</option>
+<option>Corte para caballeros</option>
+<option>Corte para niños</option>
+</select>
+</div>
+
+<div>
+<label>Precio (S/)</label>
+<input type="number" id="precio" min="0" step="0.50" placeholder="0.00">
+</div>
+
+<div>
+<label>Estado de pago</label>
+<select id="pago">
+<option>Pagado</option>
+<option>Pendiente</option>
+</select>
+</div>
+
+<div class="full">
+<label>Observaciones</label>
+<textarea id="observaciones" placeholder="Detalles de la atención..."></textarea>
+</div>
+
+</div>
+
+<button class="boton" type="submit" id="guardar" style="margin-top:17px">
+GUARDAR ATENCIÓN
+</button>
+
+<button class="boton" type="button" id="cancelar"
+onclick="limpiar()" style="display:none;margin-top:8px;background:#987582">
+CANCELAR EDICIÓN
+</button>
+
+</form>
+
+<p style="font-size:10px;color:#927782;margin-top:12px">
+Los datos se almacenan en este dispositivo mediante LocalStorage.
+</p>
+
+</div>
+</section>
+</div>
+
+<!-- CLIENTES Y REPORTES -->
+
+<div id="clientes" class="pagina">
+<section>
+
+<h2 class="titulo">Control de clientes</h2>
+
+<div class="estadisticas">
+
+<div class="estadistica">
+<strong id="total">0</strong>
+<span>Atenciones</span>
+</div>
+
+<div class="estadistica">
+<strong id="ingresos">S/ 0.00</strong>
+<span>Ingresos</span>
+</div>
+
+<div class="estadistica">
+<strong id="pendientes">0</strong>
+<span>Pendientes</span>
+</div>
+
+</div>
+
+<input type="search" id="buscar"
+placeholder="Buscar cliente o servicio..."
+style="margin-bottom:15px">
+
+<div id="lista"></div>
+
+<button class="boton" onclick="exportar()" style="margin-top:15px">
+DESCARGAR REPORTE CSV
+</button>
+
+<button class="boton" onclick="borrarTodo()"
+style="margin-top:9px;background:#a83250">
+ELIMINAR TODOS LOS REGISTROS
+</button>
+
+</section>
+</div>
+
+<footer>
+DEYMA SALÓN & SPA<br>
+Gracias por confiar en nosotros 💗<br>
+© 2026 Todos los derechos reservados.
+</footer>
+
+<!-- MENU INFERIOR -->
+
+<nav>
+
+<button class="activo" onclick="mostrar('inicio',this)">
+<span>⌂</span>Inicio
+</button>
+
+<button onclick="mostrar('servicios',this)">
+<span>✂</span>Servicios
+</button>
+
+<button onclick="mostrar('registro',this)">
+<span>＋</span>Atención
+</button>
+
+<button onclick="mostrar('clientes',this)">
+<span>♡</span>Clientes
+</button>
+
+</nav>
+
+</div>
+
+<script>
+
+// ALMACENAMIENTO LOCAL
+
+const CLAVE = "deyma_clientes";
+
+let clientes = JSON.parse(localStorage.getItem(CLAVE) || "[]");
+
+// GUARDAR INFORMACION
+
+function guardarDatos() {
+    localStorage.setItem(CLAVE, JSON.stringify(clientes));
+    actualizar();
+}
+
+// NAVEGACION
+
+function mostrar(id, boton) {
+
+    document.querySelectorAll(".pagina")
+    .forEach(p => p.classList.remove("activa"));
+
+    document.getElementById(id).classList.add("activa");
+
+    document.querySelectorAll("nav button")
+    .forEach(b => b.classList.remove("activo"));
+
+    if (boton) {
+        boton.classList.add("activo");
+    } else {
+        const botones = document.querySelectorAll("nav button");
+        const paginas = ["inicio","servicios","registro","clientes"];
+        botones[paginas.indexOf(id)].classList.add("activo");
+    }
+
+    if (id === "clientes") actualizar();
+
+    window.scrollTo(0,0);
+}
+
+// FECHA ACTUAL
+
+document.getElementById("fecha").value =
+new Date().toISOString().slice(0,10);
+
+// REGISTRAR CLIENTE
+
+document.getElementById("formulario")
+.addEventListener("submit",function(e){
+
+    e.preventDefault();
+
+    const id = document.getElementById("idEditar").value;
+
+    const cliente = {
+
+        id: id || Date.now().toString(),
+
+        nombre: document.getElementById("nombre").value.trim(),
+
+        telefono: document.getElementById("telefono").value,
+
+        fecha: document.getElementById("fecha").value,
+
+        servicio: document.getElementById("servicio").value,
+
+        precio: Number(document.getElementById("precio").value || 0),
+
+        pago: document.getElementById("pago").value,
+
+        observaciones: document.getElementById("observaciones").value
+
+    };
+
+    if (id) {
+
+        clientes = clientes.map(c => c.id === id ? cliente : c);
+
+        alert("Atención actualizada correctamente.");
+
+    } else {
+
+        clientes.unshift(cliente);
+
+        alert("Cliente registrado correctamente.");
+
+    }
+
+    guardarDatos();
+
+    limpiar();
+
+    mostrar("clientes");
+
+});
+
+// LIMPIAR FORMULARIO
+
+function limpiar() {
+
+    document.getElementById("formulario").reset();
+
+    document.getElementById("idEditar").value = "";
+
+    document.getElementById("fecha").value =
+    new Date().toISOString().slice(0,10);
+
+    document.getElementById("guardar").textContent =
+    "GUARDAR ATENCIÓN";
+
+    document.getElementById("cancelar").style.display = "none";
+
+}
+
+// EDITAR CLIENTE
+
+function editar(id) {
+
+    const c = clientes.find(x => x.id === id);
+
+    if (!c) return;
+
+    document.getElementById("idEditar").value = c.id;
+    document.getElementById("nombre").value = c.nombre;
+    document.getElementById("telefono").value = c.telefono;
+    document.getElementById("fecha").value = c.fecha;
+    document.getElementById("servicio").value = c.servicio;
+    document.getElementById("precio").value = c.precio;
+    document.getElementById("pago").value = c.pago;
+    document.getElementById("observaciones").value = c.observaciones;
+
+    document.getElementById("guardar").textContent =
+    "ACTUALIZAR ATENCIÓN";
+
+    document.getElementById("cancelar").style.display = "block";
+
+    mostrar("registro");
+
+}
+
+// ELIMINAR CLIENTE
+
+function eliminar(id) {
+
+    if (confirm("¿Deseas eliminar este registro?")) {
+
+        clientes = clientes.filter(c => c.id !== id);
+
+        guardarDatos();
+
+        alert("Registro eliminado.");
+
+    }
+
+}
+
+// EVITAR INSERTAR HTML DESDE LOS DATOS
+
+function escapar(texto) {
+
+    return String(texto).replace(/[&<>"']/g, letra => ({
+
+        "&":"&amp;",
+        "<":"&lt;",
+        ">":"&gt;",
+        '"':"&quot;",
+        "'":"&#39;"
+
+    })[letra]);
+
+}
+
+// MOSTRAR CLIENTES Y REPORTES
+
+function actualizar() {
+
+    const lista = document.getElementById("lista");
+
+    const busqueda =
+    document.getElementById("buscar").value.toLowerCase();
+
+    const filtrados = clientes.filter(c =>
+        (c.nombre + " " + c.servicio).toLowerCase()
+        .includes(busqueda)
+    );
+
+    document.getElementById("total").textContent =
+    clientes.length;
+
+    const ingresos = clientes
+    .filter(c => c.pago === "Pagado")
+    .reduce((s,c) => s + c.precio,0);
+
+    document.getElementById("ingresos").textContent =
+    "S/ " + ingresos.toFixed(2);
+
+    document.getElementById("pendientes").textContent =
+    clientes.filter(c => c.pago === "Pendiente").length;
+
+    if (filtrados.length === 0) {
+
+        lista.innerHTML =
+        "<p style='text-align:center;padding:25px;color:#987582'>No hay clientes registrados.</p>";
+
+        return;
+
+    }
+
+    lista.innerHTML = filtrados.map(c => `
+
+        <div class="cliente">
+
+            <strong>${escapar(c.nombre)}</strong><br>
+
+            📞 ${escapar(c.telefono || "Sin teléfono")}<br>
+
+            📅 ${escapar(c.fecha)}<br>
+
+            ✂️ ${escapar(c.servicio)}<br>
+
+            💰 S/ ${Number(c.precio).toFixed(2)}<br>
+
+            💳 Pago: ${escapar(c.pago)}<br>
+
+            📝 ${escapar(c.observaciones || "Sin observaciones")}
+
+            <div class="acciones">
+
+                <button class="editar"
+                onclick="editar('${c.id}')">
+                EDITAR
+                </button>
+
+                <button class="eliminar"
+                onclick="eliminar('${c.id}')">
+                ELIMINAR
+                </button>
+
+            </div>
+
+        </div>
+
+    `).join("");
+
+}
+
+// BUSCAR CLIENTES
+
+document.getElementById("buscar")
+.addEventListener("input",actualizar);
+
+// ELIMINAR TODOS LOS REGISTROS
+
+function borrarTodo() {
+
+    if (clientes.length === 0) {
+
+        alert("No existen registros.");
+
+        return;
+
+    }
+
+    if (confirm("¿Eliminar todos los clientes?")) {
+
+        clientes = [];
+
+        guardarDatos();
+
+        alert("Todos los registros fueron eliminados.");
+
+    }
+
+}
+
+// EXPORTAR REPORTE CSV
+
+function exportar() {
+
+    if (clientes.length === 0) {
+
+        alert("No existen datos para exportar.");
+
+        return;
+
+    }
+
+    const columnas = [
+        "nombre",
+        "telefono",
+        "fecha",
+        "servicio",
+        "precio",
+        "pago",
+        "observaciones"
+    ];
+
+    const filas = [
+
+        columnas.join(";"),
+
+        ...clientes.map(c =>
+
+            columnas.map(k =>
+
+                '"' + String(c[k] ?? "").replace(/"/g,'""') + '"'
+
+            ).join(";")
+
+        )
+
+    ];
+
+    const archivo = new Blob(
+        ["\uFEFF" + filas.join("\n")],
+        {type:"text/csv;charset=utf-8;"}
+    );
+
+    const enlace = document.createElement("a");
+
+    enlace.href = URL.createObjectURL(archivo);
+
+    enlace.download = "clientes_deyma_salon.csv";
+
+    enlace.click();
+
+    URL.revokeObjectURL(enlace.href);
+
+}
+
+// CARGAR INFORMACION AL ABRIR
+
+actualizar();
+
+</script>
+
+</body>
+</html>
+```
